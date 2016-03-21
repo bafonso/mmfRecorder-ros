@@ -1,7 +1,8 @@
-#lavis
+#mmfRecorder
 
 Authors:
 
+    Bruno Afonso <bafonso@gmail.com>
     Peter Polidoro <polidorop@janelia.hhmi.org>
 
 License:
@@ -305,4 +306,3 @@ ROS_NAMESPACE=camera roslaunch blob_tracker blob_tracker.launch manager:=camera_
 ```shell`
 ROS_NAMESPACE=camera roslaunch larvae_behavior_classifier larvae_behavior_classifier.launch manager:=camera_nodelet_manager
 ``
-
