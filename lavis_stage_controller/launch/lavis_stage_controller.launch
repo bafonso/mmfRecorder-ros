@@ -1,0 +1,19 @@
+<launch>
+  <arg name="stage_feedback_period" />
+  <arg name="image_x_stage_x_gain" />
+  <arg name="image_x_stage_y_gain" />
+  <arg name="image_y_stage_x_gain" />
+  <arg name="image_y_stage_y_gain" />
+  <arg name="lavis_stage" />
+  <node name="lavis_stage_controller_node" pkg="lavis_stage_controller" type="lavis_stage_controller_node.py">
+    <param name="feedback_period" value="$(arg stage_feedback_period)"/>
+    <param name="image_x_stage_x_gain" value="$(arg image_x_stage_x_gain)"/>
+    <param name="image_x_stage_y_gain" value="$(arg image_x_stage_y_gain)"/>
+    <param name="image_y_stage_x_gain" value="$(arg image_y_stage_x_gain)"/>
+    <param name="image_y_stage_y_gain" value="$(arg image_y_stage_y_gain)"/>
+
+    <!-- remap output topics -->
+    <remap from="cmd_vel" to="/$(arg lavis_stage)/cmd_vel"/>
+
+  </node>
+</launch>

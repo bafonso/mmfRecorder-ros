@@ -1,0 +1,9 @@
+<launch>
+  <arg name="lavis_stage" />
+  <node name="lavis_smach_node" pkg="lavis_smach" type="lavis_smach_node.py">
+    <!-- remap input topics -->
+    <remap from="home" to="/$(arg lavis_stage)/home"/>
+    <remap from="move_absolute" to="/$(arg lavis_stage)/move_absolute"/>
+
+  </node>
+</launch>

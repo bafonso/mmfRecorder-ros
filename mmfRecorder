@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "roslaunch lavis_launch first.launch &"
+roslaunch lavis_launch first.launch &
+echo "sleep 5"
+sleep 5
+echo "roslaunch lavis_launch second.launch &"
+roslaunch lavis_launch second.launch &
+echo "sleep 5"
+sleep 5
+echo "lavis running!"
+echo "press ctrl-c a couple of times in this terminal to stop all lavis processes."
+sleep infinity

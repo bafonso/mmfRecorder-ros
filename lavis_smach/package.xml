@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lavis_smach</name>
+  <version>0.0.0</version>
+  <description>The lavis_smach package</description>
+
+  <maintainer email="polidorop@janelia.hhmi.org">Peter Polidoro</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">https://github.com/JaneliaSciComp/lavis</url>
+  <url type="bugtracker">https://github.com/JaneliaSciComp/lavis/issues</url>
+  <url type="repository">https://github.com/JaneliaSciComp/lavis</url>
+
+  <author email="polidorop@janelia.hhmi.org">Peter Polidoro</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>smach</depend>
+  <depend>smach_ros</depend>
+
+  <export>
+  </export>
+</package>
