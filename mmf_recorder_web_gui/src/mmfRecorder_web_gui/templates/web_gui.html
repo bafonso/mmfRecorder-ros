@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lavis</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <link rel="stylesheet" href="static/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="static/jquery-ui.structure.min.css"/>
+    <link rel="stylesheet" href="static/jquery-ui.theme.min.css"/>
+    <link rel="stylesheet" href="static/lavis.css?v=15"/>
+    <script src="/static/js/ros/eventemitter2.min.js"></script>
+    <script src="/static/js/ros/roslib.min.js"></script>
+    <script src="/static/js/jquery/jquery.js"></script>
+    <script src="/static/js/jquery/jquery-ui.min.js"></script>
+  </head>
+
+  <body>
+    <div id="window" >
+      <div id="statusIndicator">
+        <p id="connecting">
+          Connecting to rosbridge...
+        </p>
+        <p id="connected">
+          Connected
+        </p>
+        <p id="error">
+          Error in the backend!
+        </p>
+        <p id="closed">
+          Connection closed.
+        </p>
+      </div>
+      <div id="tabs" >
+        <ul>
+          <li><a href="#tabs-camera">Camera</a></li>
+          <li><a href="#tabs-stage">Stage</a></li>
+          <li><a href="#tabs-lights">Lights</a></li>
+          <li><a href="#tabs-sound">Sound</a></li>
+          <li><a href="#tabs-stage-controller">Stage Controller</a></li>
+          <li><a href="#tabs-behavior-classifier">Behavior Classifier</a></li>
+          <li><a href="#tabs-stimuli-controller">Stimuli Controller</a></li>
+        </ul>
+        <div id="tabs-camera" >
+          <div id="stream-camera-image-raw" class="center">
+            <img src="http://localhost:8080/stream?topic=/camera/image_raw&width=600&height=600&quality=75" />
+          </div>
+        </div>
+        <div id="tabs-stage" >
+          <div class="center">
+            <button id="stage-move-absolute-percent" class="center">Move</button>
+            <p>
+              <input type="text" id="stage-vertical-percent" class="slider-label" readonly>
+              <label for="stage-vertical-percent">%</label>
+            </p>
+            <div id="slider-stage-vertical" class="center"></div>
+            <div id="slider-stage-horizontal" class="center"></div>
+            <p>
+              <input type="text" id="stage-horizontal-percent" class="slider-label" readonly>
+              <label for="stage-horizontal-percent">%</label>
+            </p>
+          </div>
+        </div>
+        <div id="tabs-lights" >
+          <div class="center">
+            <table id="tbl-lights">
+              <tr>
+                <td><button id="current-channel-1">Set Channel 1 Current</button></td>
+                <td><button id="current-channel-2">Set Channel 2 Current</button></td>
+                <td><button id="current-channel-3">Set Channel 3 Current</button></td>
+                <td><button id="current-channel-4">Set Channel 4 Current</button></td>
+              </tr>
+            </table>
+            <div id="slider-current" class="center"></div>
+            <input type="text" id="current" class="slider-label" readonly>
+            <label for="current">mA</label>
+          </div>
+        </div>
+        <div id="tabs-sound" >
+          <div class="center">
+            <button id="play-tone" class="center">Play Tone</button>
+            <div id="slider-frequency" class="center"></div>
+            <input type="text" id="frequency" class="slider-label" readonly>
+            <label for="frequency">Hz</label>
+            <div id="slider-duration" class="center"></div>
+            <input type="text" id="duration" class="slider-label" readonly>
+            <label for="duration">ms</label>
+          </div>
+        </div>
+        <div id="tabs-stage-controller" >
+          <table id="tbl-stage-controller">
+            <tr>
+              <td><button id="stage-controller-start">Start Stage Controller</button></td>
+              <td><button id="save-background-image">Save Background Image</button></td>
+              <td><button id="stage-controller-stop">Stop Stage Controller</button></td>
+            </tr>
+          </table>
+          <div id="stream-camera-blob-out-image-raw" class="center">
+            <img src="http://localhost:8080/stream?topic=/camera/blob_out/image_raw&width=600&height=600" />
+          </div>
+        </div>
+        <div id="tabs-behavior-classifier" >
+          <table id="tbl-behavior-classifier">
+            <tr>
+              <td><button id="data-writer-start">Start Data Writer</button></td>
+              <td><button id="data-writer-stop">Stop Data Writer</button></td>
+            </tr>
+          </table>
+          <div id="stream-camera-behavior-out-image-raw" class="center">
+            <img src="http://localhost:8080/stream?topic=/camera/behavior_out/image_raw&width=600&height=600" />
+          </div>
+        </div>
+        <div id="tabs-stimuli-controller" >
+          <table id="tbl-stimuli-controller">
+            <tr>
+              <td><button id="stimuli-controller-start">Start Stimuli Controller</button></td>
+              <td><button id="stimuli-controller-stop">Stop Stimuli Controller</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/scripts/lavis.js"></script>
+  </body>
+</html>
