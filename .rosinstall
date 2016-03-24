@@ -1,3 +1,6 @@
 - git:
     local-name: pointgrey_camera_driver
     uri: https://github.com/janelia-ros/pointgrey_camera_driver.git
+
+    local-name: mmf_writer
+    uri: https://github.com/bafonso/mmf_writer_ros.git

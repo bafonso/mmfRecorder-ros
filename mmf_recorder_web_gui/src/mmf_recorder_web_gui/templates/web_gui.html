@@ -2,15 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Lavis</title>
+    <title>MMF Recorder Web interface</title>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="-1">
     <link rel="stylesheet" href="static/jquery-ui.min.css"/>
     <link rel="stylesheet" href="static/jquery-ui.structure.min.css"/>
     <link rel="stylesheet" href="static/jquery-ui.theme.min.css"/>
     <link rel="stylesheet" href="static/lavis.css?v=15"/>
-    <script src="/static/js/ros/eventemitter2.min.js"></script>
-    <script src="/static/js/ros/roslib.min.js"></script>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.js"></script>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.js"></script>
+<!--    <script src="/static/js/ros/eventemitter2.min.js"></script>
+    <script src="/static/js/ros/roslib.min.js"></script> -->
     <script src="/static/js/jquery/jquery.js"></script>
     <script src="/static/js/jquery/jquery-ui.min.js"></script>
   </head>
@@ -34,19 +36,95 @@
       <div id="tabs" >
         <ul>
           <li><a href="#tabs-camera">Camera</a></li>
+          <li><a href="#tabs-mmf-settings">Recorder Settings</a></li>
+<!--
           <li><a href="#tabs-stage">Stage</a></li>
           <li><a href="#tabs-lights">Lights</a></li>
           <li><a href="#tabs-sound">Sound</a></li>
           <li><a href="#tabs-stage-controller">Stage Controller</a></li>
           <li><a href="#tabs-behavior-classifier">Behavior Classifier</a></li>
           <li><a href="#tabs-stimuli-controller">Stimuli Controller</a></li>
+        -->
         </ul>
+
         <div id="tabs-camera" >
-          <div id="stream-camera-image-raw" class="center">
+<table><tr><td>
+          <div id="stream-camera-image-raw" class="left">
             <img src="http://localhost:8080/stream?topic=/camera/image_raw&width=600&height=600&quality=75" />
           </div>
+        </td>
+        <td> <!-- Other stuff here -->
+          <table id="tbl-lights">
+            <tr>
+              <td>Seconds to record: <input type="text" id="timeToRecord"></td>
+            </tr>
+            <tr>
+              <td><button id="mmf-controller-start">Start Capture</button></td>
+              <td><button id="mmf-controller-stop">Stop Capture</button></td>
+            </tr>
+            <tr><td>Buffer number:
+              <input type="text" id="recordingBuffer" class="slider-label" readonly>
+            </td></tr>
+            <tr><td>Elapsed Recording Time (sec):
+              <input type="text" id="recordingElapsedTime" class="input-label" readonly> <label for="elapsedRecording">seconds</label>
+            </td></tr>
+
+            <tr>
+              <td id="shutter-speed">shutter speed: <div id="slider-shutter-speed" class="center"></div></td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+
+          <table id="Camera settings">
+            <tr>
+              <td id="shutter-speed">shutter speed: <div id="slider-shutter-speed" class="center"></div></td>
+            </tr>
+          </table>
         </div>
-        <div id="tabs-stage" >
+
+
+        <div id="tabs-mmf" >
+          <div class="center">
+
+            <input type="text" id="current" class="slider-label" readonly>
+
+          </div>
+        </div>
+
+
+          <div id="tabs-mmf-settings" class="right">
+
+
+            <button id="mmf-controller-start" class="center">Start</button>
+            <button id="mmf-controller-stop" class="center">Stop</button>
+            <input type="text" id="recordingBuffer" class="slider-label" readonly>
+
+          </div>
+
+
+<!--
+                <div id="tabs-mmf" >
+                  <div class="center">
+                    <button id="mmf-controller-start" class="center">Start</button>
+                    <button id="mmf-controller-stop" class="center">Stop</button>
+
+                    <p>
+                      <input type="text" id="stage-vertical-percent" class="slider-label" readonly>
+                      <label for="stage-vertical-percent">%</label>
+                    </p>
+                    <div id="slider-stage-vertical" class="center"></div>
+                    <div id="slider-stage-horizontal" class="center"></div>
+                    <p>
+                      <input type="text" id="stage-horizontal-percent" class="slider-label" readonly>
+                      <label for="stage-horizontal-percent">%</label>
+                    </p>
+                  </div>
+                </div>
+-->
+<!--        <div id="tabs-stage" >
           <div class="center">
             <button id="stage-move-absolute-percent" class="center">Move</button>
             <p>
@@ -119,7 +197,10 @@
           </table>
         </div>
       </div>
+-->
     </div>
-    <script src="/static/js/scripts/lavis.js"></script>
+    <script src="/static/js/scripts/mmf_recorder.js"></script>
+
+<!--    <script src="/static/js/scripts/lavis.js"></script> -->
   </body>
 </html>

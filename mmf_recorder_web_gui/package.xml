@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>lavis_web_gui</name>
+  <name>mmf_recorder_web_gui</name>
   <version>0.0.0</version>
-  <description>The lavis_web_gui package</description>
+  <description>The mmf_recorder_web_gui package</description>
 
-  <maintainer email="polidorop@janelia.hhmi.org">Peter Polidoro</maintainer>
+  <maintainer email="bafonso@gmail.com">Bruno Afonso</maintainer>
 
   <license>BSD</license>
 
-  <url type="website">https://github.com/JaneliaSciComp/lavis</url>
-  <url type="bugtracker">https://github.com/JaneliaSciComp/lavis/issues</url>
-  <url type="repository">https://github.com/JaneliaSciComp/lavis</url>
+  <url type="website">https://github.com/bafonso/mmfRecorder-ros</url>
+  <url type="bugtracker">https://github.com/bafonso/mmfRecorder-ros/issues</url>
+  <url type="repository">https://github.com/bafonso/mmfRecorder-ros</url>
 
-  <author email="polidorop@janelia.hhmi.org">Peter Polidoro</author>
+  <author email="bafonso@gmail.com">Bruno Afonso</author>
 
   <buildtool_depend>catkin</buildtool_depend>
   <depend>rospy</depend>

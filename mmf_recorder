@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "roslaunch lavis_launch first.launch &"
-roslaunch lavis_launch first.launch &
+echo "roslaunch mmf_recorder_launch first.launch &"
+roslaunch mmf_recorder_launch first.launch &
 echo "sleep 5"
 sleep 5
-echo "roslaunch lavis_launch second.launch &"
-roslaunch lavis_launch second.launch &
+echo "roslaunch mmf_recorder_launch second.launch &"
+roslaunch mmf_recorder_launch second.launch &
 echo "sleep 5"
 sleep 5
 echo "lavis running!"

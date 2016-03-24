@@ -16,6 +16,13 @@ html, body {
   padding: 0;
   border: none;
 }
+.input-label {
+  border: 0;
+  color: #f6931f;
+  font-weight:bold;
+  width: 80px;
+}
+
 #tbl-stage-controller {
   width: 100%;
 }
@@ -84,6 +91,11 @@ th {
   height: 200px;
   margin: 20px auto;
 }
+#slider-shutter-speed {
+  width: 200px;
+  margin: 20px auto;
+}
+
 #slider-stage-horizontal {
   width: 200px;
   margin: 20px auto;

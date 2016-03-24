@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(mmfRecorder_launch)
+project(mmf_recorder_launch)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -101,7 +101,7 @@ roslaunch_add_file_check(launch)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES lavis_launch
+#  LIBRARIES mmf_recorder_launch
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -115,24 +115,24 @@ catkin_package(
 # include_directories(include)
 
 ## Declare a C++ library
-# add_library(lavis_launch
-#   src/${PROJECT_NAME}/lavis_launch.cpp
+# add_library(mmf_recorder_launch
+#   src/${PROJECT_NAME}/mmf_recorder_launch.cpp
 # )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(lavis_launch ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(mmf_recorder_launch ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(lavis_launch_node src/lavis_launch_node.cpp)
+# add_executable(mmf_recorder_launch_node src/mmf_recorder_launch_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(lavis_launch_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(mmf_recorder_launch_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(lavis_launch_node
+# target_link_libraries(mmf_recorder_launch_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -151,7 +151,7 @@ catkin_package(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS lavis_launch lavis_launch_node
+# install(TARGETS mmf_recorder_launch mmf_recorder_launch_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -176,7 +176,7 @@ catkin_package(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_lavis_launch.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_mmf_recorder_launch.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

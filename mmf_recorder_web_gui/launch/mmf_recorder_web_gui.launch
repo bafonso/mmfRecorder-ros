@@ -2,7 +2,7 @@
   <node pkg="web_video_server" type="web_video_server" name="web_video_server" />
   <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
   <arg name="hardware" default="true"/>
-  <node pkg="mmfRecorder_web_gui" type="web_gui.py" name="mmfRecorder_web_gui" >
+  <node pkg="mmf_recorder_web_gui" type="web_gui.py" name="mmf_recorder_web_gui" >
     <param name="hardware" value="$(arg hardware)"/>
   </node>
 </launch>
