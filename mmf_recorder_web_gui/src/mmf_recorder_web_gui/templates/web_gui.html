@@ -37,14 +37,6 @@
         <ul>
           <li><a href="#tabs-camera">Camera</a></li>
           <li><a href="#tabs-mmf-settings">Recorder Settings</a></li>
-<!--
-          <li><a href="#tabs-stage">Stage</a></li>
-          <li><a href="#tabs-lights">Lights</a></li>
-          <li><a href="#tabs-sound">Sound</a></li>
-          <li><a href="#tabs-stage-controller">Stage Controller</a></li>
-          <li><a href="#tabs-behavior-classifier">Behavior Classifier</a></li>
-          <li><a href="#tabs-stimuli-controller">Stimuli Controller</a></li>
-        -->
         </ul>
 
         <div id="tabs-camera" >
@@ -56,11 +48,30 @@
         <td> <!-- Other stuff here -->
           <table id="tbl-lights">
             <tr>
+              <td>Tracker: <select id="tracker">
+                <option value="t9">t9</option>
+                <option value="t10" selected="selected">t10</option>
+              </td>
+            </tr>
+            <tr>
+              <td>Folder: <input type="text" id="basePath" size="40"></td>
+            </tr>
+            <tr>
+              <td>Gal4 line: <input type="text" id="gal4_line"></td>
+            </tr>
+            <tr>
+              <td>Effector: <input type="text" id="effector"></td>
+            </tr>
+            <tr>
+              <td>Stimuli Description: <input type="text" id="stimuli_description" size="60"></td>
+            </tr>
+            <tr>
               <td>Seconds to record: <input type="text" id="timeToRecord"></td>
             </tr>
             <tr>
-              <td><button id="mmf-controller-start">Start Capture</button></td>
-              <td><button id="mmf-controller-stop">Stop Capture</button></td>
+              <td><button id="mmf-controller-start">Start Capture</button>
+                <button id="mmf-controller-stop">Stop Capture</button>
+              </td>
             </tr>
             <tr><td>Buffer number:
               <input type="text" id="recordingBuffer" class="slider-label" readonly>
@@ -68,23 +79,34 @@
             <tr><td>Elapsed Recording Time (sec):
               <input type="text" id="recordingElapsedTime" class="input-label" readonly> <label for="elapsedRecording">seconds</label>
             </td></tr>
+            <tr><td>Status:
+              <input type="text" id="recordingStatus" class="input-label" readonly></label>
+            </td></tr>
 
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
             <tr>
-              <td id="shutter-speed">shutter speed: <div id="slider-shutter-speed" class="center"></div></td>
+              <td>data directory: <input type="text" id="data_directory" size="100"></td>
             </tr>
-
+            <tr>
+              <td>filename: <input type="text" id="file_name" size="80"></td>
+            </tr>
           </table>
         </td>
       </tr>
     </table>
 
-          <table id="Camera settings">
+<!--          <table id="Camera settings">
             <tr>
               <td id="shutter-speed">shutter speed: <div id="slider-shutter-speed" class="center"></div></td>
             </tr>
           </table>
         </div>
-
+-->
 
         <div id="tabs-mmf" >
           <div class="center">
