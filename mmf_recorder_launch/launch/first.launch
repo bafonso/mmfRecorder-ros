@@ -31,7 +31,13 @@
            camera itself. Use this parameter to override that value for cameras capable of
            other framerates. -->
 
-      <param name="video_mode" value="format7_mode2" />
+<!--      <param name="video_mode" value="format7_mode2" /> -->
+      <param name="video_mode" value="format7_mode0" />
+      <param name="format7_roi_width" value="2048" />
+      <param name="format7_roi_height" value="2048" />
+      <param name="format7_x_offset" value="200" />
+      <param name="format7_y_offset" value="0" />
+
       <param name="frame_rate" value="30" />
       <param name="format7_color_coding" value="mono8" />
 

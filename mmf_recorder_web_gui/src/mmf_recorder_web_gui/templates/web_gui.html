@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="static/jquery-ui.min.css"/>
     <link rel="stylesheet" href="static/jquery-ui.structure.min.css"/>
     <link rel="stylesheet" href="static/jquery-ui.theme.min.css"/>
-    <link rel="stylesheet" href="static/lavis.css?v=15"/>
+    <link rel="stylesheet" href="static/mmf_recorder.css?v=15"/>
 <script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.js"></script>
 <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.js"></script>
 <!--    <script src="/static/js/ros/eventemitter2.min.js"></script>
@@ -41,8 +41,8 @@
 
         <div id="tabs-camera" >
 <table><tr><td>
-          <div id="stream-camera-image-raw" class="left">
-            <img src="http://localhost:8080/stream?topic=/camera/image_raw&width=600&height=600&quality=75" />
+          <div id="stream-camera-image-raw" class="crop">
+            <img id="camera-img" src="http://localhost:8080/stream?topic=/camera/image_raw&width=1000&height=1000&quality=75" />
           </div>
         </td>
         <td> <!-- Other stuff here -->
@@ -69,6 +69,12 @@
               <td>Seconds to record: <input type="text" id="timeToRecord"></td>
             </tr>
             <tr>
+              <td>keyframe interval: <input type="text" id="keyframe" size="5">
+                estimated fps: <input type="text" id="fps" size="5">
+              </td>
+            </tr>
+
+            <tr>
               <td><button id="mmf-controller-start">Start Capture</button>
                 <button id="mmf-controller-stop">Stop Capture</button>
               </td>
@@ -76,11 +82,14 @@
             <tr><td>Buffer number:
               <input type="text" id="recordingBuffer" class="slider-label" readonly>
             </td></tr>
+            <tr><td>Lost Frames:
+              <input type="text" id="lostFrames" class="input-label" readonly>
+            </td></tr>
             <tr><td>Elapsed Recording Time (sec):
               <input type="text" id="recordingElapsedTime" class="input-label" readonly> <label for="elapsedRecording">seconds</label>
             </td></tr>
             <tr><td>Status:
-              <input type="text" id="recordingStatus" class="input-label" readonly></label>
+              <input type="text" id="recordingStatus" class="input-label" readonly size="10">
             </td></tr>
 
           </table>
@@ -98,6 +107,19 @@
           </table>
         </td>
       </tr>
+        <tr>
+          <td id="crop">Crop factor: <div id="slider-crop" class="center"></div>
+          <input type="text" id="crop_value" class="input-label" readonly size="10"></td>
+        </tr>
+        <tr>
+          <td id="crop">horizontal pan: <div id="pan-horizontal-slider" class="center"></div>
+          <input type="text" id="pan-horizontal-slider_value" class="input-label" readonly size="10"></td>
+        </tr>
+        <tr>
+          <td id="crop">vertical pan: <div id="pan-vertical-slider" class="center"></div>
+          <input type="text" id="pan-vertical-slider_value" class="input-label" readonly size="10"></td>
+        </tr>
+
     </table>
 
 <!--          <table id="Camera settings">
@@ -107,7 +129,7 @@
           </table>
         </div>
 -->
-
+<!--
         <div id="tabs-mmf" >
           <div class="center">
 
@@ -115,7 +137,7 @@
 
           </div>
         </div>
-
+-->
 
           <div id="tabs-mmf-settings" class="right">
 
